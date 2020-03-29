@@ -1,0 +1,21 @@
+@startuml architecture
+
+database "BAL" {
+}
+
+() "job scheduling" - program
+
+node "program" {
+  BAL --> [BAL reader] 
+  [BAL reader] --> [BAL converter]
+} 
+
+[customizing] --> [BAL reader]
+[customizing] --> [BAL converter]
+
+[BAL converter] --> [GELF]
+[BAL converter] --> [Loki]
+[BAL converter] --> [metrics]
+
+
+@enduml
