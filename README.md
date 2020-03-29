@@ -1,1 +1,1 @@
-# abap-BAL-Graylog-GELF-exporter
+# abap-BAL-exporter
