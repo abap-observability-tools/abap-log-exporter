@@ -5,6 +5,7 @@ CLASS zcl_abe_bal_reader DEFINITION
 
   PUBLIC SECTION.
 
+    "! read BAL
     METHODS read
       IMPORTING
         object    TYPE balobj_d
