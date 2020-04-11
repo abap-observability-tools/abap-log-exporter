@@ -1,0 +1,507 @@
+{
+  "global": {
+    "files": "/src/**/*.*",
+    "skipGeneratedGatewayClasses": true,
+    "skipGeneratedPersistentClasses": true,
+    "skipGeneratedFunctionGroups": true
+  },
+  "dependencies": [
+    {
+      "url": "https://github.com/abaplint/deps",
+      "folder": "/deps",
+      "files": "/src/**/*.*"
+    }
+  ],
+  "syntax": {
+    "version": "v754",
+    "errorNamespace": "^(Z|Y)",
+    "globalConstants": [],
+    "globalMacros": []
+  },
+  "rules": {
+    "7bit_ascii": {
+      "exclude": [],
+      "reason": ""
+    },
+    "abapdoc": {
+      "exclude": [],
+      "reason": "",
+      "checkLocal": false
+    },
+    "allowed_object_naming": {
+      "exclude": [],
+      "reason": ""
+    },
+    "allowed_object_types": {
+      "exclude": [],
+      "reason": "",
+      "allowed": []
+    },
+    "ambiguous_statement": {
+      "exclude": [],
+      "reason": ""
+    },
+    "avoid_use": {
+      "exclude": [],
+      "reason": "",
+      "define": true,
+      "endselect": true,
+      "execSQL": true,
+      "kernelCall": true,
+      "communication": true,
+      "statics": true,
+      "systemCall": true,
+      "defaultKey": true,
+      "break": true
+    },
+    "begin_end_names": {
+      "exclude": [],
+      "reason": ""
+    },
+    "chain_mainly_declarations": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_abstract": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_comments": {
+      "exclude": [],
+      "reason": "",
+      "allowEndOfLine": false
+    },
+    "check_ddic": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_include": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_no_handler_pragma": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_syntax": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_text_elements": {
+      "exclude": [],
+      "reason": ""
+    },
+    "check_transformation_exists": {
+      "exclude": [],
+      "reason": ""
+    },
+    "class_attribute_names": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "ignoreExceptions": true,
+      "statics": "^G._.+$",
+      "instance": "^M._.+$"
+    },
+    "cloud_types": {
+      "exclude": [],
+      "reason": ""
+    },
+    "colon_missing_space": {
+      "exclude": [],
+      "reason": ""
+    },
+    "commented_code": {
+      "exclude": [],
+      "reason": "",
+      "allowIncludeInFugr": true
+    },
+    "constructor_visibility_public": {
+      "exclude": [],
+      "reason": ""
+    },
+    "contains_tab": {
+      "exclude": [],
+      "reason": ""
+    },
+    "definitions_top": {
+      "exclude": [],
+      "reason": ""
+    },
+    "description_empty": {
+      "exclude": [],
+      "reason": ""
+    },
+    "double_space": {
+      "exclude": [],
+      "reason": "",
+      "keywords": true,
+      "startParen": true,
+      "endParen": true,
+      "afterColon": true
+    },
+    "empty_line_in_statement": {
+      "exclude": [],
+      "reason": "",
+      "allowChained": false
+    },
+    "empty_statement": {
+      "exclude": [],
+      "reason": ""
+    },
+    "empty_structure": {
+      "exclude": [],
+      "reason": "",
+      "loop": true,
+      "if": true,
+      "while": true,
+      "case": true,
+      "select": true,
+      "do": true,
+      "at": true
+    },
+    "exit_or_check": {
+      "exclude": [],
+      "reason": ""
+    },
+    "exporting": {
+      "exclude": [],
+      "reason": ""
+    },
+    "forbidden_identifier": {
+      "exclude": [],
+      "reason": "",
+      "check": []
+    },
+    "form_no_dash": {
+      "exclude": [],
+      "reason": ""
+    },
+    "form_tables_obsolete": {
+      "exclude": [],
+      "reason": ""
+    },
+    "fully_type_constants": {
+      "exclude": [],
+      "reason": "",
+      "checkData": true
+    },
+    "functional_writing": {
+      "exclude": [],
+      "reason": "",
+      "ignoreExceptions": true
+    },
+    "global_class": {
+      "exclude": [],
+      "reason": ""
+    },
+    "identical_form_names": {
+      "exclude": [],
+      "reason": ""
+    },
+    "if_in_if": {
+      "exclude": [],
+      "reason": ""
+    },
+    "implement_methods": {
+      "exclude": [],
+      "reason": ""
+    },
+    "in_statement_indentation": {
+      "exclude": [],
+      "reason": "",
+      "ignoreExceptions": true
+    },
+    "indentation": {
+      "exclude": [],
+      "reason": "",
+      "ignoreExceptions": true,
+      "alignTryCatch": false,
+      "globalClassSkipFirst": false,
+      "ignoreGlobalClassDefinition": false,
+      "ignoreGlobalInterface": false
+    },
+    "inline_data_old_versions": {
+      "exclude": [],
+      "reason": ""
+    },
+    "keep_single_parameter_on_one_line": {
+      "exclude": [],
+      "reason": "",
+      "length": 120
+    },
+    "keyword_case": {
+      "exclude": [],
+      "reason": "",
+      "style": "upper",
+      "ignoreExceptions": true,
+      "ignoreLowerClassImplmentationStatement": true,
+      "ignoreGlobalClassDefinition": false,
+      "ignoreGlobalInterface": false,
+      "ignoreFunctionModuleName": false
+    },
+    "line_length": {
+      "exclude": [],
+      "reason": "",
+      "length": 120
+    },
+    "line_only_punc": {
+      "exclude": [],
+      "reason": "",
+      "ignoreExceptions": true
+    },
+    "local_class_naming": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "local": "^LCL_.+$",
+      "exception": "^LCX_.+$",
+      "test": "^LTCL_.+$"
+    },
+    "local_testclass_location": {
+      "exclude": [],
+      "reason": ""
+    },
+    "local_variable_names": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "expectedData": "\\w",
+      "expectedConstant": "^LC_.+$",
+      "expectedFS": "^<L._.+>$"
+    },
+    "main_file_contents": {
+      "exclude": [],
+      "reason": ""
+    },
+    "max_one_statement": {
+      "exclude": [],
+      "reason": ""
+    },
+    "message_exists": {
+      "exclude": [],
+      "reason": ""
+    },
+    "method_length": {
+      "exclude": [],
+      "reason": "",
+      "statements": 100,
+      "errorWhenEmpty": true,
+      "ignoreTestClasses": false
+    },
+    "method_parameter_names": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "ignoreExceptions": true,
+      "importing": "\\w",
+      "returning": "^R._.+$",
+      "changing": "^C._.+$",
+      "exporting": "^E._.+$"
+    },
+    "mix_returning": {
+      "exclude": [],
+      "reason": ""
+    },
+    "msag_consistency": {
+      "exclude": [],
+      "reason": ""
+    },
+    "nesting": {
+      "exclude": [],
+      "reason": "",
+      "depth": 5
+    },
+    "newline_between_methods": {
+      "exclude": [],
+      "reason": "",
+      "count": 3,
+      "logic": "less"
+    },
+    "no_public_attributes": {
+      "exclude": [],
+      "reason": "",
+      "allowReadOnly": false
+    },
+    "object_naming": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "clas": "^ZC(L|X)\\_",
+      "intf": "^ZIF\\_",
+      "prog": "^Z",
+      "fugr": "^Z",
+      "tabl": "^Z",
+      "ttyp": "^Z",
+      "dtel": "^Z",
+      "doma": "^Z",
+      "msag": "^Z",
+      "tran": "^Z",
+      "enqu": "^EZ",
+      "auth": "^Z",
+      "pinf": "^Z",
+      "idoc": "^Z",
+      "xslt": "^Z",
+      "ssfo": "^Z",
+      "ssst": "^Z"
+    },
+    "obsolete_statement": {
+      "exclude": [],
+      "reason": "",
+      "refresh": true,
+      "compute": true,
+      "add": true,
+      "subtract": true,
+      "multiply": true,
+      "move": true,
+      "divide": true,
+      "requested": true,
+      "occurs": true,
+      "setExtended": true
+    },
+    "parser_error": {
+      "exclude": [],
+      "reason": ""
+    },
+    "prefer_returning_to_exporting": {
+      "exclude": [],
+      "reason": ""
+    },
+    "preferred_compare_operator": {
+      "exclude": [],
+      "reason": "",
+      "badOperators": [
+        "EQ",
+        "><",
+        "NE",
+        "GE",
+        "GT",
+        "LT",
+        "LE"
+      ]
+    },
+    "prefix_is_current_class": {
+      "exclude": [],
+      "reason": "",
+      "omitMeInstanceCalls": true
+    },
+    "release_idoc": {
+      "exclude": [],
+      "reason": ""
+    },
+    "remove_descriptions": {
+      "exclude": [],
+      "reason": "",
+      "ignoreExceptions": false
+    },
+    "rfc_error_handling": {
+      "exclude": [],
+      "reason": ""
+    },
+    "selection_screen_naming": {
+      "exclude": [],
+      "reason": "",
+      "patternKind": "required",
+      "ignoreNames": [],
+      "ignorePatterns": [],
+      "parameter": "^P_.+$",
+      "selectOption": "^S_.+$"
+    },
+    "sequential_blank": {
+      "exclude": [],
+      "reason": "",
+      "lines": 4
+    },
+    "short_case": {
+      "exclude": [],
+      "reason": "",
+      "length": 1,
+      "allow": []
+    },
+    "sicf_consistency": {
+      "exclude": [],
+      "reason": ""
+    },
+    "space_before_colon": {
+      "exclude": [],
+      "reason": ""
+    },
+    "space_before_dot": {
+      "exclude": [],
+      "reason": "",
+      "ignoreGlobalDefinition": true,
+      "ignoreExceptions": true
+    },
+    "sql_escape_host_variables": {
+      "exclude": [],
+      "reason": ""
+    },
+    "start_at_tab": {
+      "exclude": [],
+      "reason": ""
+    },
+    "superclass_final": {
+      "exclude": [],
+      "reason": ""
+    },
+    "tabl_enhancement_category": {
+      "exclude": [],
+      "reason": ""
+    },
+    "try_without_catch": {
+      "exclude": [],
+      "reason": ""
+    },
+    "type_begin_single_include": {
+      "exclude": [],
+      "reason": ""
+    },
+    "type_form_parameters": {
+      "exclude": [],
+      "reason": ""
+    },
+    "types_naming": {
+      "exclude": [],
+      "reason": "",
+      "pattern": "^TY_.+$"
+    },
+    "unknown_types": {
+      "exclude": [],
+      "reason": ""
+    },
+    "unreachable_code": {
+      "exclude": [],
+      "reason": ""
+    },
+    "unused_variables": {
+      "exclude": [],
+      "reason": ""
+    },
+    "use_new": {
+      "exclude": [],
+      "reason": ""
+    },
+    "when_others_last": {
+      "exclude": [],
+      "reason": ""
+    },
+    "whitespace_end": {
+      "exclude": [],
+      "reason": ""
+    },
+    "xml_consistency": {
+      "exclude": [],
+      "reason": ""
+    }
+  }
+}

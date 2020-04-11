@@ -1,0 +1,27 @@
+{
+  "name": "abap-bal-exporter",
+  "version": "0.0.1",
+  "description": "abap-BAL-exporter",
+  "scripts": {
+    "test": "npm run abaplint",
+    "abaplint": "abaplint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohannesKonings/abap-BAL-exporter.git"
+  },
+  "keywords": [
+    "abap",
+    "logs",
+    "sap-netweaver"
+  ],
+  "author": "Johannes Konings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohannesKonings/abap-BAL-exporter/issues"
+  },
+  "homepage": "https://github.com/JohannesKonings/abap-BAL-exporter#readme",
+  "devDependencies": {
+    "@abaplint/cli": "^2.31.0"
+  }
+}
