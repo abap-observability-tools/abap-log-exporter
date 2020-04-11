@@ -30,8 +30,8 @@ CLASS zcl_abe_bal_reader IMPLEMENTATION.
 
     CALL FUNCTION 'APPL_LOG_READ_DB'
       EXPORTING
-        object             = object           " Object name
-        subobject          = subobject        " Subobject name
+        object             = object
+        subobject          = subobject
 *       external_number    = space            " external number
 *       date_from          = '00000000'       " Read-from date
 *       date_to            = SY-DATUM         " Read-by date
