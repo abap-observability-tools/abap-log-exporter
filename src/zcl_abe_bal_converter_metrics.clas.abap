@@ -1,0 +1,14 @@
+CLASS zcl_abe_bal_converter_metrics DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_abe_bal_converter_metrics IMPLEMENTATION.
+ENDCLASS.
