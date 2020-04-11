@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "abap-BAL-exporter",
   "scripts": {
-    "test": "npm run abaplint"
+    "test": "abaplint"
   },
   "repository": {
     "type": "git",
