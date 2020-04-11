@@ -1,6 +1,7 @@
 # abap-BAL-exporter :construction: WIP
 
 [![Known Vulnerabilities](https://snyk.io/test/github/JohannesKonings/abap-BAL-exporter/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JohannesKonings/abap-BAL-exporter?targetFile=package.json)
+![Run abaplint](https://github.com/JohannesKonings/abap-BAL-exporter/workflows/Run%20abaplint/badge.svg)
 
 # architecture
 
