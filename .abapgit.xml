@@ -10,6 +10,7 @@
     <item>/LICENSE</item>
     <item>/README.md</item>
     <item>/package.json</item>
+    <item>/package-lock.json</item>
     <item>/.travis.yml</item>
     <item>/.gitlab-ci.yml</item>
     <item>/abaplint.json</item>
