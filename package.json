@@ -1,13 +1,13 @@
 {
-  "name": "abap-bal-exporter",
+  "name": "abap-log-exporter",
   "version": "0.0.1",
-  "description": "abap-BAL-exporter",
+  "description": "abap-log-exporter",
   "scripts": {
     "test": "abaplint"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohannesKonings/abap-BAL-exporter.git"
+    "url": "git+https://github.com/JohannesKonings/abap-log-exporter.git"
   },
   "keywords": [
     "abap",
@@ -17,9 +17,9 @@
   "author": "Johannes Konings",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JohannesKonings/abap-BAL-exporter/issues"
+    "url": "https://github.com/JohannesKonings/abap-log-exporter/issues"
   },
-  "homepage": "https://github.com/JohannesKonings/abap-BAL-exporter#readme",
+  "homepage": "https://github.com/JohannesKonings/abap-log-exporter#readme",
   "devDependencies": {
     "@abaplint/cli": "^2.31.0"
   }

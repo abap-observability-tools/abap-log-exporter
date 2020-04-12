@@ -2,20 +2,25 @@
 
 database "BAL" {
 }
+database "SMICM" {
+}
+database "SM21" {
+}
 
 () "job scheduling" - program
 
 node "program" {
-  BAL --> [BAL reader] 
-  [BAL reader] --> [BAL converter]
+  BAL --> [log reader] 
+  SMICM --> [log reader] 
+  SM21 --> [log reader] 
+  [log reader] --> [log converter]
 } 
 
-[customizing] --> [BAL reader]
-[customizing] --> [BAL converter]
+[customizing] --> [log reader]
+[customizing] --> [log converter]
 
-[BAL converter] --> [GELF]
-[BAL converter] --> [Loki]
-[BAL converter] --> [metrics]
+[log converter] --> [GELF]
+[log converter] --> [Loki]
 
 
 @enduml
