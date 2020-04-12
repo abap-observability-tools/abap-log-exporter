@@ -1,4 +1,4 @@
-CLASS zcl_abe_bal_converter_metrics DEFINITION
+CLASS zcl_ale_log_converter_metrics DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -10,5 +10,5 @@ ENDCLASS.
 
 
 
-CLASS zcl_abe_bal_converter_metrics IMPLEMENTATION.
+CLASS zcl_ale_log_converter_metrics IMPLEMENTATION.
 ENDCLASS.

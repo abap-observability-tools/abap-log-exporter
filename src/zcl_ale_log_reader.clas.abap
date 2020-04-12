@@ -1,4 +1,4 @@
-CLASS zcl_abe_bal_reader DEFINITION
+CLASS zcl_ale_log_reader DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -18,7 +18,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_abe_bal_reader IMPLEMENTATION.
+CLASS zcl_ale_log_reader IMPLEMENTATION.
   METHOD read.
 
     DATA header_data          TYPE STANDARD TABLE OF balhdr.

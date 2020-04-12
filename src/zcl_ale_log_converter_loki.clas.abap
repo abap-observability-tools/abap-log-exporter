@@ -1,4 +1,4 @@
-CLASS zcl_abe_bal_converter_loki DEFINITION
+CLASS zcl_ale_log_converter_loki DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -10,5 +10,5 @@ ENDCLASS.
 
 
 
-CLASS zcl_abe_bal_converter_loki IMPLEMENTATION.
+CLASS zcl_ale_log_converter_loki IMPLEMENTATION.
 ENDCLASS.
