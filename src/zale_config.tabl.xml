@@ -9,6 +9,7 @@
     <DDTEXT>abap-log-exporter configuration</DDTEXT>
     <MAINFLAG>X</MAINFLAG>
     <CONTFLAG>C</CONTFLAG>
+    <EXCLASS>1</EXCLASS>
    </DD02V>
    <DD09L>
     <TABNAME>ZALE_CONFIG</TABNAME>
