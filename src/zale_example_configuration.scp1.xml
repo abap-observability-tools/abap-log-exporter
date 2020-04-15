@@ -4,7 +4,7 @@
   <asx:values>
    <SCP1>
     <SCPRATTR>
-     <ID>zale_example_configuration</ID>
+     <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
      <TYPE>TMV</TYPE>
      <REFTYPE>TRAN</REFTYPE>
      <REFNAME>NPLK900076</REFNAME>
@@ -16,43 +16,43 @@
     <SCPRTEXT>
      <SCPRTEXT>
       <LANGU>E</LANGU>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
-      <TEXT>abap-log-exporter example configuration</TEXT>
+      <TEXT>ale example</TEXT>
      </SCPRTEXT>
     </SCPRTEXT>
     <SCPRVALS>
      <SCPRVALS>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>BALOBJ</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
       <FIELDNAME>OBJECT</FIELDNAME>
       <FLAG>FKY</FLAG>
-      <VALUE>ZABE</VALUE>
+      <VALUE>ZALE</VALUE>
      </SCPRVALS>
      <SCPRVALS>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>V_BALSUB</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
       <FIELDNAME>OBJECT</FIELDNAME>
       <FLAG>FKY</FLAG>
-      <VALUE>ZABE</VALUE>
+      <VALUE>ZALE</VALUE>
      </SCPRVALS>
      <SCPRVALS>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>V_BALSUB</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
       <FIELDNAME>SUBOBJECT</FIELDNAME>
       <FLAG>FKY</FLAG>
-      <VALUE>ZABE_EXAMPLE</VALUE>
+      <VALUE>ZALE_EXAMPLE</VALUE>
      </SCPRVALS>
     </SCPRVALS>
     <SCPRVALL>
      <SCPRVALL>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>BALOBJ</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
@@ -62,19 +62,19 @@
       <VALUE>abap-log-exporter</VALUE>
      </SCPRVALL>
      <SCPRVALL>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>V_BALSUB</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
       <FIELDNAME>SUBOBJTXT</FIELDNAME>
       <LANGU>E</LANGU>
       <FLAG>USE</FLAG>
-      <VALUE>abap-log-exporter examples</VALUE>
+      <VALUE>ale example</VALUE>
      </SCPRVALL>
     </SCPRVALL>
     <SCPRRECA>
      <SCPRRECA>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>BALOBJ</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
@@ -83,7 +83,7 @@
       <CLUSTNAME>APPL_LOG</CLUSTNAME>
      </SCPRRECA>
      <SCPRRECA>
-      <ID>zale_example_configuration</ID>
+      <ID>ZALE_EXAMPLE_CONFIGURATION</ID>
       <VERSION>N</VERSION>
       <TABLENAME>V_BALSUB</TABLENAME>
       <RECNUMBER>1</RECNUMBER>
