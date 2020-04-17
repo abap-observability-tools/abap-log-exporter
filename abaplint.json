@@ -303,9 +303,9 @@
       "ignorePatterns": [],
       "ignoreExceptions": true,
       "importing": "\\w",
-      "returning": "^R._.+$",
-      "changing": "^C._.+$",
-      "exporting": "^E._.+$"
+      "returning": "\\w",
+      "changing": "\\w",
+      "exporting": "\\w"
     },
     "mix_returning": {
       "exclude": [],
