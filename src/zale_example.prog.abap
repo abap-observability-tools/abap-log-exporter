@@ -14,14 +14,13 @@ START-OF-SELECTION.
 
   "load config
   SELECT *
-  FROM zale_config
-  INTO TABLE @DATA(configurations).
+    FROM zale_config
+    INTO TABLE @DATA(configurations).
 
 
   "log to BAL
   DATA log_handle         TYPE balloghndl.
   DATA log_entry_header   TYPE bal_s_log.
-  DATA log_entry_msg      TYPE bal_s_msg.
 
   log_entry_header-extnumber  = 'BAL export example'.
   log_entry_header-object     = object_abe_example.
@@ -45,16 +44,8 @@ START-OF-SELECTION.
     CALL FUNCTION 'BAL_LOG_MSG_ADD_FREE_TEXT'
       EXPORTING
         i_log_handle     = log_handle
-        i_msgty          = 'I'                 " Message type (A, E, W, I, S)
-*       i_probclass      = '4'              " Problem class (1, 2, 3, 4)
-        i_text           = 'example warning'                 " Message data
-*       i_s_context      =                  " Context information for free text message
-*       i_s_params       =                  " Parameter set for free text message
-*       i_detlevel       = '1'              " Application Log: Level of Detail
-*    IMPORTING
-*       e_s_msg_handle   =                  " Message handle
-*       e_msg_was_logged =                  " Message collected
-*       e_msg_was_displayed =                  " Message output
+        i_msgty          = 'I'
+        i_text           = 'example warning'
       EXCEPTIONS
         log_not_found    = 1
         msg_inconsistent = 2
@@ -68,16 +59,8 @@ START-OF-SELECTION.
     CALL FUNCTION 'BAL_LOG_MSG_ADD_FREE_TEXT'
       EXPORTING
         i_log_handle     = log_handle
-        i_msgty          = 'I'                 " Message type (A, E, W, I, S)
-*       i_probclass      = '4'              " Problem class (1, 2, 3, 4)
-        i_text           = 'example error'                 " Message data
-*       i_s_context      =                  " Context information for free text message
-*       i_s_params       =                  " Parameter set for free text message
-*       i_detlevel       = '1'              " Application Log: Level of Detail
-*    IMPORTING
-*       e_s_msg_handle   =                  " Message handle
-*       e_msg_was_logged =                  " Message collected
-*       e_msg_was_displayed =                  " Message output
+        i_msgty          = 'I'
+        i_text           = 'example error'
       EXCEPTIONS
         log_not_found    = 1
         msg_inconsistent = 2
@@ -199,10 +182,9 @@ START-OF-SELECTION.
             argument_not_found = 1
             plugin_not_active  = 2
             internal_error     = 3
-            OTHERS             = 4
-               ).
+            OTHERS             = 4 ).
         IF sy-subrc <> 0.
-*   Implement suitable error handling here
+          ASSERT 1 = 2.
         ENDIF.
 
         client->request->set_method( 'POST' ).
@@ -225,9 +207,7 @@ START-OF-SELECTION.
                      WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
         ENDIF.
 
-        " client->request->set_cdata( export_target-json ).
         client->request->set_data( xjson ).
-*  client->sen
 
         client->send(
           EXCEPTIONS
@@ -235,10 +215,9 @@ START-OF-SELECTION.
             http_invalid_state         = 2
             http_processing_failed     = 3
             http_invalid_timeout       = 4
-            OTHERS                     = 5
-               ).
+            OTHERS                     = 5 ).
         IF sy-subrc <> 0.
-* Implement suitable error handling here
+          ASSERT 1 = 2.
         ENDIF.
 
         client->receive(
@@ -246,10 +225,9 @@ START-OF-SELECTION.
             http_communication_failure = 1
             http_invalid_state         = 2
             http_processing_failed     = 3
-            OTHERS                     = 4
-               ).
+            OTHERS                     = 4 ).
         IF sy-subrc <> 0.
-
+          ASSERT 1 = 2.
         ENDIF.
 
         client->response->get_status( IMPORTING

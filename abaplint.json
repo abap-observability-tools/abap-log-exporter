@@ -224,7 +224,7 @@
       "ignoreGlobalInterface": false
     },
     "inline_data_old_versions": {
-      "exclude": [],
+      "exclude": ["\\w"],
       "reason": ""
     },
     "keep_single_parameter_on_one_line": {
@@ -414,8 +414,8 @@
       "patternKind": "required",
       "ignoreNames": [],
       "ignorePatterns": [],
-      "parameter": "^P_.+$",
-      "selectOption": "^S_.+$"
+      "parameter": "\\w",
+      "selectOption": "\\w"
     },
     "sequential_blank": {
       "exclude": [],
@@ -473,10 +473,10 @@
     "types_naming": {
       "exclude": [],
       "reason": "",
-      "pattern": "^TY_.+$"
+      "pattern": "\\w"
     },
     "unknown_types": {
-      "exclude": [],
+      "exclude": ["\\w"],
       "reason": ""
     },
     "unreachable_code": {
