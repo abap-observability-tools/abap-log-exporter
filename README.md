@@ -9,4 +9,4 @@
 
 # local tests
 
-https://github.com/JohannesKonings/docker-graylog-grafana-loki-stack-4-sap-netweaver
+https://github.com/JohannesKonings/docker-abap-log-exporter-tester
