@@ -21,6 +21,7 @@ node "program" {
 
 [log converter] --> [GELF]
 [log converter] --> [Loki]
+[log converter] --> [Fluentd]
 
 
 @enduml
