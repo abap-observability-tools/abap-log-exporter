@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/JohannesKonings/abap-log-exporter#readme",
   "devDependencies": {
-    "@abaplint/cli": "^2.31.0"
+    "@abaplint/cli": "^2.32.1"
   }
 }
