@@ -11,3 +11,5 @@
 # local tests
 
 https://github.com/JohannesKonings/docker-abap-log-exporter-tester
+
+:warning: instead of localhost the URLs have to be bustomized with the IP of the Ethernet Adapter
