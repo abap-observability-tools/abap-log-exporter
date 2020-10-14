@@ -1,24 +1,26 @@
-CLASS zcl_ale_log_reader DEFINITION
+CLASS zcl_ale_log_reader_bal DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
 
   PUBLIC SECTION.
 
+    INTERFACES zif_ale_log_reader.
+
     "! read BAL
     METHODS read
       IMPORTING
-        object    TYPE balobj_d
-        subobject TYPE balsubobj.
-
-
+        !object    TYPE balobj_d
+        !subobject TYPE balsubobj .
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS zcl_ale_log_reader IMPLEMENTATION.
+CLASS ZCL_ALE_LOG_READER_BAL IMPLEMENTATION.
+
+
   METHOD read.
 
     DATA header_data          TYPE STANDARD TABLE OF balhdr.
@@ -55,5 +57,4 @@ CLASS zcl_ale_log_reader IMPLEMENTATION.
         t_exceptions       = exceptions.
 
   ENDMETHOD.
-
 ENDCLASS.
