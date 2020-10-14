@@ -44,8 +44,8 @@ START-OF-SELECTION.
     CALL FUNCTION 'BAL_LOG_MSG_ADD_FREE_TEXT'
       EXPORTING
         i_log_handle     = log_handle
-        i_msgty          = 'I'        
-        i_text           = 'example warning'   
+        i_msgty          = 'I'
+        i_text           = 'example warning'
       EXCEPTIONS
         log_not_found    = 1
         msg_inconsistent = 2
@@ -59,8 +59,8 @@ START-OF-SELECTION.
     CALL FUNCTION 'BAL_LOG_MSG_ADD_FREE_TEXT'
       EXPORTING
         i_log_handle     = log_handle
-        i_msgty          = 'I'        
-        i_text           = 'example error'  
+        i_msgty          = 'I'
+        i_text           = 'example error'
       EXCEPTIONS
         log_not_found    = 1
         msg_inconsistent = 2
@@ -122,15 +122,15 @@ START-OF-SELECTION.
       "convert to GELF and Loki
 
       DATA(gelf_json) = |\{| &&
-                      |"version": "1.1",| &&
-                      |"host": "{ sy-host }",| &&
-                      |"short_message": "{ header_data_wa-extnumber }",| &&
-                      |"full_message": "{ message-msgv1 }",| &&
-                      |"level": 1,| &&
-                      |"_user_id": "{ header_data_wa-aluser }",| &&
-                      |"_some_info": "foo",| &&
-                      |"_some_env_var": "bar"| &&
-                      |\}|.
+                        |"version": "1.1",| &&
+                        |"host": "{ sy-host }",| &&
+                        |"short_message": "{ header_data_wa-extnumber }",| &&
+                        |"full_message": "{ message-msgv1 }",| &&
+                        |"level": 1,| &&
+                        |"_user_id": "{ header_data_wa-aluser }",| &&
+                        |"_some_info": "foo",| &&
+                        |"_some_env_var": "bar"| &&
+                        |\}|.
 
 
       DATA time TYPE c LENGTH 8.
@@ -145,10 +145,10 @@ START-OF-SELECTION.
 
 *      data(label)
 
-      DATA(loki_json) =  |\{"streams": [| &&
-                         |\{ "labels": "\{BALexport=\\"{ header_data_wa-extnumber }\\"\}",| &&
-                         | "entries": [\{ "ts": "{ date }T{ time }.801064",| &&
-                         | "line": "{ message-msgv1 }" \}] \}]\}|.
+      DATA(loki_json) = |\{"streams": [| &&
+                        |\{ "labels": "\{BALexport=\\"{ header_data_wa-extnumber }\\"\}",| &&
+                        | "entries": [\{ "ts": "{ date }T{ time }.801064",| &&
+                        | "line": "{ message-msgv1 }" \}] \}]\}|.
 
 
       TYPES: BEGIN OF export_target,
