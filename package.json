@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohannesKonings/abap-log-exporter.git"
+    "url": "git+https://github.com/Goala/abap-log-exporter.git"
   },
   "keywords": [
     "abap",
@@ -17,9 +17,9 @@
   "author": "Johannes Konings",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JohannesKonings/abap-log-exporter/issues"
+    "url": "https://github.com/Goala/abap-log-exporter/issues"
   },
-  "homepage": "https://github.com/JohannesKonings/abap-log-exporter#readme",
+  "homepage": "https://github.com/Goala/abap-log-exporter#readme",
   "devDependencies": {
     "@abaplint/cli": "^2.32.1"
   }
