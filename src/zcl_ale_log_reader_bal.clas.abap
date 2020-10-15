@@ -22,8 +22,8 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
     DATA exceptions           TYPE STANDARD TABLE OF bal_s_exception.
 
 
-    DATA(object)    = VALUE balobj_d( filter_values[ key = 'OBJECT' ]-value ).
-    DATA(subobject) =  VALUE balsubobj( filter_values[ key = 'SUBOBJECT' ]-value ).
+    DATA(object) = VALUE balobj_d( filter_values[ key = 'OBJECT' ]-value ).
+    DATA(subobject) = VALUE balsubobj( filter_values[ key = 'SUBOBJECT' ]-value ).
 
 
     CALL FUNCTION 'APPL_LOG_READ_DB'
@@ -55,8 +55,8 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
     LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>).
 
       MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
-      WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
-      INTO log_entry.
+        WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
+        INTO log_entry.
 
       logs = VALUE #( BASE logs ( text = log_entry ) ).
 

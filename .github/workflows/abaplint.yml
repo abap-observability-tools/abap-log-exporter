@@ -17,4 +17,4 @@ jobs:
       - name: Run abaplint
         run: |
           npm install @abaplint/cli
-          npm test
+          npm run lint

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "abap-log-exporter",
   "scripts": {
-    "test": "abaplint"
+    "lint": "abaplint"
   },
   "repository": {
     "type": "git",
@@ -15,12 +15,15 @@
     "sap-netweaver"
   ],
   "author": "Johannes Konings",
+  "contributors": [
+    "Max Stenke"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Goala/abap-log-exporter/issues"
   },
   "homepage": "https://github.com/Goala/abap-log-exporter#readme",
   "devDependencies": {
-    "@abaplint/cli": "^2.57.6"
+    "@abaplint/cli": "^2.57.7"
   }
 }
