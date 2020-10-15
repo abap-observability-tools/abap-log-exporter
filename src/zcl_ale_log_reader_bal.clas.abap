@@ -1,25 +1,18 @@
-class ZCL_ALE_LOG_READER_BAL definition
-  public
-  final
-  create public .
+CLASS zcl_ale_log_reader_bal DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-    "! read BAL
-  methods READ
-    importing
-      !OBJECT type BALOBJ_D
-      !SUBOBJECT type BALSUBOBJ .
+    INTERFACES zif_ale_log_reader.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
+CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
 
-
-
-CLASS ZCL_ALE_LOG_READER_BAL IMPLEMENTATION.
-
-
-  METHOD READ.
+  METHOD zif_ale_log_reader~read.
 
     DATA header_data          TYPE STANDARD TABLE OF balhdr.
     DATA header_parameters    TYPE STANDARD TABLE OF balhdrp.
@@ -27,6 +20,10 @@ CLASS ZCL_ALE_LOG_READER_BAL IMPLEMENTATION.
     DATA message_parameters   TYPE STANDARD TABLE OF balmp.
     DATA contexts             TYPE STANDARD TABLE OF balc.
     DATA exceptions           TYPE STANDARD TABLE OF bal_s_exception.
+
+
+    DATA(object)    = VALUE balobj_d( filter_values[ key = 'OBJECT' ]-value ).
+    DATA(subobject) =  VALUE balsubobj( filter_values[ key = 'SUBOBJECT' ]-value ).
 
 
     CALL FUNCTION 'APPL_LOG_READ_DB'
@@ -54,5 +51,17 @@ CLASS ZCL_ALE_LOG_READER_BAL IMPLEMENTATION.
         contexts           = contexts
         t_exceptions       = exceptions.
 
+    DATA log_entry TYPE string.
+    LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>).
+
+      MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
+      WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
+      INTO log_entry.
+
+      logs = VALUE #( BASE logs ( text = log_entry ) ).
+
+    ENDLOOP.
+
   ENDMETHOD.
+
 ENDCLASS.
