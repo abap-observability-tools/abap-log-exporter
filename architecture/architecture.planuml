@@ -14,14 +14,16 @@ node "program" {
   SMICM --> [log reader] 
   SM21 --> [log reader] 
   [log reader] --> [log converter]
+  [log converter] --> [log connector]
 } 
 
 [customizing] --> [log reader]
 [customizing] --> [log converter]
+[customizing] --> [log connector]
 
-[log converter] --> [GELF]
-[log converter] --> [Loki]
-[log converter] --> [Fluentd]
+[log connector] --> [GELF]
+[log connector] --> [Loki]
+[log connector] --> [Fluentd]
 
 
 @enduml
