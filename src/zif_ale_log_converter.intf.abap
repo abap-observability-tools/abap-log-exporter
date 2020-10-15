@@ -1,4 +1,4 @@
-interface ZIF_ALE_LOG_CONVERTER
-  public .
+INTERFACE zif_ale_log_converter
+  PUBLIC .
 
-endinterface.
+ENDINTERFACE.

@@ -1,4 +1,4 @@
-interface ZIF_ALE_LOG_CONNECTOR
-  public .
+INTERFACE zif_ale_log_connector
+  PUBLIC .
 
-endinterface.
+ENDINTERFACE.
