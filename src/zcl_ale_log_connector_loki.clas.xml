@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_ALE_LOG_READER_BAL</CLSNAME>
+    <CLSNAME>ZCL_ALE_LOG_CONNECTOR_LOKI</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Log Reader BAL</DESCRIPT>
+    <DESCRIPT>Log Connector Loki</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
