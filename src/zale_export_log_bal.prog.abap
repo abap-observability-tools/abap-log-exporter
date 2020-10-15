@@ -15,6 +15,9 @@ START-OF-SELECTION.
   filter_values = VALUE #( ( key = 'OBJECT' value = object )
                            ( key = 'SUBOBJECT' value = suobject ) ).
 
+  DATA(logs) = NEW zcl_ale_log_reader_bal(  )->zif_ale_log_reader~read( filter_values ).
+
+  cl_demo_output=>display( logs ).
 
 
   "convert
