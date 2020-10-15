@@ -4,6 +4,9 @@ CLASS zcl_ale_log_converter_loki DEFINITION
   CREATE PUBLIC .
 
   PUBLIC SECTION.
+
+    INTERFACES zif_ale_log_converter.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -11,4 +14,8 @@ ENDCLASS.
 
 
 CLASS zcl_ale_log_converter_loki IMPLEMENTATION.
+  METHOD zif_ale_log_converter~convert.
+
+  ENDMETHOD.
+
 ENDCLASS.

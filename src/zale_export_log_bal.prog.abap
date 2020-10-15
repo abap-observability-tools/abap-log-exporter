@@ -15,11 +15,13 @@ START-OF-SELECTION.
   filter_values = VALUE #( ( key = 'OBJECT' value = object )
                            ( key = 'SUBOBJECT' value = suobject ) ).
 
+
+  "read
   DATA(logs) = NEW zcl_ale_log_reader_bal(  )->zif_ale_log_reader~read( filter_values ).
 
-  cl_demo_output=>display( logs ).
-
-
   "convert
+  DATA(converted_logs) = NEW zcl_ale_log_converter_gelf( )->zif_ale_log_converter~convert( logs ).
+
+  cl_demo_output=>display( converted_logs ).
 
   "connect
