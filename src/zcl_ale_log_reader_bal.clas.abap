@@ -58,7 +58,8 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
         WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
         INTO log_entry.
 
-      logs = VALUE #( BASE logs ( text = log_entry ) ).
+      logs = VALUE #( BASE logs (   level = <message>-msgty
+                                    text  = log_entry ) ).
 
     ENDLOOP.
 
