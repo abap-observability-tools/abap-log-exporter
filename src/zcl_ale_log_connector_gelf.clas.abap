@@ -42,10 +42,13 @@ CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
       client->request->set_content_type( 'application/json' ).
 
       DATA xjson TYPE xstring.
+      DATA text TYPE string.
+
+      text = <converted_log>-json.
 
       CALL FUNCTION 'SCMS_STRING_TO_XSTRING'
         EXPORTING
-          text   = <converted_log>
+          text   = text
 *         mimetype = SPACE
 *         encoding =
         IMPORTING
