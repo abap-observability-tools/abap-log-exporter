@@ -13,5 +13,9 @@ ENDCLASS.
 
 
 
-CLASS ZCL_ALE_LOG_CONNECTOR_LOKI IMPLEMENTATION.
+CLASS zcl_ale_log_connector_loki IMPLEMENTATION.
+  METHOD zif_ale_log_connector~connect.
+
+  ENDMETHOD.
+
 ENDCLASS.
