@@ -42,16 +42,16 @@ CLASS zcl_ale_log_converter_gelf IMPLEMENTATION.
                                       WHEN zif_ale_log_reader=>con_log_level-error THEN con_gelf_level-error
                                       ELSE con_gelf_level-informational ).
 
-      DATA(gelf_json) =   |\{| &&
-                          |"version": "1.1",| &&
-                          |"host": "{ sy-host }",| &&
-                          |"short_message": "{ 'dummy' }",| &&
-                          |"full_message": "{ <log>-text }",| &&
-                          |"level": { level },| &&
-                          |"_user_id": "{ sy-uname }",| &&
-                          |"_some_info": "foo",| &&
-                          |"_some_env_var": "bar"| &&
-                          |\}|.
+      DATA(gelf_json) = |\{| &&
+                        |"version": "1.1",| &&
+                        |"host": "{ sy-host }",| &&
+                        |"short_message": "{ 'dummy' }",| &&
+                        |"full_message": "{ <log>-text }",| &&
+                        |"level": { level },| &&
+                        |"_user_id": "{ sy-uname }",| &&
+                        |"_some_info": "foo",| &&
+                        |"_some_env_var": "bar"| &&
+                        |\}|.
 
       converted_logs = VALUE #( BASE converted_logs ( json = gelf_json ) ).
 
