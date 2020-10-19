@@ -1,6 +1,12 @@
 INTERFACE zif_ale_log_reader
   PUBLIC .
 
+  CONSTANTS: BEGIN OF con_log_level,
+               info    TYPE c LENGTH 1 VALUE 'I',
+               warning TYPE c LENGTH 1 VALUE 'W',
+               error   TYPE c LENGTH 1 VALUE 'E',
+             END OF con_log_level.
+
   TYPES: BEGIN OF ty_filter_value,
            key   TYPE string,
            value TYPE string,
@@ -9,7 +15,8 @@ INTERFACE zif_ale_log_reader
   TYPES ty_filter_values TYPE STANDARD TABLE OF ty_filter_value.
 
   TYPES: BEGIN OF ty_log,
-           text TYPE string,
+           level TYPE c LENGTH 1,
+           text  TYPE string,
          END OF ty_log.
 
   TYPES ty_logs TYPE STANDARD TABLE OF ty_log WITH DEFAULT KEY.
