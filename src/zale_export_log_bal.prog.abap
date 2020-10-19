@@ -7,6 +7,7 @@ REPORT zale_export_log_bal.
 
 PARAMETERS object   TYPE balhdr-object OBLIGATORY.
 PARAMETERS suobject TYPE balhdr-subobject OBLIGATORY.
+PARAMETERS test TYPE flag DEFAULT 'X'.
 
 START-OF-SELECTION.
 
@@ -22,6 +23,11 @@ START-OF-SELECTION.
   "convert
   DATA(converted_logs) = NEW zcl_ale_log_converter_gelf( )->zif_ale_log_converter~convert( logs ).
 
-  cl_demo_output=>display( converted_logs ).
-
   "connect
+  IF test = abap_true.
+    cl_demo_output=>display( converted_logs ).
+  ELSE.
+    NEW zcl_ale_log_connector_gelf( )->zif_ale_log_connector~connect( converted_logs ).
+    DATA(log_lines) = lines( converted_logs ).
+    WRITE |Number of logs sent: { log_lines }|.
+  ENDIF.
