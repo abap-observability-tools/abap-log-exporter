@@ -36,7 +36,6 @@ CLASS zcl_ale_log_converter_gelf IMPLEMENTATION.
 
     LOOP AT logs ASSIGNING FIELD-SYMBOL(<log>).
 
-      "just a guess. need to checked in GELF doku
       DATA(level) = SWITCH integer( <log>-level
                                       WHEN zif_ale_log_reader=>con_log_level-info THEN con_gelf_level-info
                                       WHEN zif_ale_log_reader=>con_log_level-warning THEN con_gelf_level-warning
