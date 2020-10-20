@@ -23,6 +23,7 @@ INTERFACE zif_ale_log_reader
 
   METHODS read
     IMPORTING filter_values TYPE ty_filter_values
+              customizing   TYPE REF TO zif_ale_customizing
     RETURNING VALUE(logs)   TYPE ty_logs.
 
 ENDINTERFACE.

@@ -16,11 +16,7 @@ ENDCLASS.
 CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
   METHOD zif_ale_log_connector~connect.
 
-    SELECT *
-    FROM zale_config
-    INTO TABLE @DATA(configurations).
-
-    DATA(gelf_url) = configurations[ ale_key = 'GELF_URL' ]-ale_value.
+    DATA(gelf_url) = customizing->get_url( ).
 
     LOOP AT converted_logs ASSIGNING FIELD-SYMBOL(<converted_log>).
 
