@@ -52,15 +52,18 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
         t_exceptions       = exceptions.
 
     DATA log_entry TYPE string.
-    LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>).
+    LOOP AT header_data ASSIGNING FIELD-SYMBOL(<header_data>).
+      LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>) WHERE lognumber = <header_data>-lognumber.
 
-      MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
-        WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
-        INTO log_entry.
+        MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
+          WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
+          INTO log_entry.
 
-      logs = VALUE #( BASE logs ( level = <message>-msgty
-                                  text = log_entry ) ).
+        logs = VALUE #( BASE logs ( level = <message>-msgty
+                                    header_text = |{ <header_data>-extnumber } / { <header_data>-object } / { <header_data>-subobject }|
+                                    item_text = log_entry ) ).
 
+      ENDLOOP.
     ENDLOOP.
 
   ENDMETHOD.

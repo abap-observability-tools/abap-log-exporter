@@ -45,8 +45,8 @@ CLASS zcl_ale_log_converter_gelf IMPLEMENTATION.
       DATA(gelf_json) = |\{| &&
                         |"version": "1.1",| &&
                         |"host": "{ sy-host }",| &&
-                        |"short_message": "{ 'dummy' }",| &&
-                        |"full_message": "{ <log>-text }",| &&
+                        |"short_message": "{ <log>-header_text }",| &&
+                        |"full_message": "{ <log>-item_text }",| &&
                         |"level": { level },| &&
                         |"_user_id": "{ sy-uname }",| &&
                         |"_some_info": "foo",| &&
