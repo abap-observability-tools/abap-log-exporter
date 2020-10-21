@@ -24,6 +24,13 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>SCENARIO</KEY>
+     <ENTRY>.</ENTRY>
+     <LENGTH>9</LENGTH>
+     <SPLIT>D</SPLIT>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>SUOBJECT</KEY>
      <ENTRY>.</ENTRY>
      <LENGTH>9</LENGTH>
