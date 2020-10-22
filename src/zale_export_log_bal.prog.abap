@@ -22,18 +22,18 @@ START-OF-SELECTION.
   customizing->zif_ale_customizing~set_scenario( scenario ).
 
   "read
-  DATA(logs) = NEW zcl_ale_log_reader_bal(  )->zif_ale_log_reader~read( filter_values = filter_values
-                                                                        customizing = customizing ).
+  DATA(logs) = customizing->zif_ale_customizing~get_reader_class( )->read( filter_values = filter_values
+                                                                           customizing = customizing ).
 
   "convert
-  DATA(converted_logs) = NEW zcl_ale_log_converter_gelf( )->zif_ale_log_converter~convert( logs = logs
+  DATA(converted_logs) = customizing->zif_ale_customizing~get_converter_class( )->convert( logs = logs
                                                                                            customizing = customizing ).
 
   "connect
   IF test = abap_true.
     cl_demo_output=>display( converted_logs ).
   ELSE.
-    NEW zcl_ale_log_connector_gelf( )->zif_ale_log_connector~connect( converted_logs = converted_logs
+    customizing->zif_ale_customizing~get_connector_class( )->connect( converted_logs = converted_logs
                                                                       customizing = customizing ).
     DATA(log_lines) = lines( converted_logs ).
     WRITE |Number of logs sent: { log_lines }|.

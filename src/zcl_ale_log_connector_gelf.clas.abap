@@ -16,7 +16,7 @@ ENDCLASS.
 CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
   METHOD zif_ale_log_connector~connect.
 
-    DATA(gelf_url) = customizing->get_url( ).
+    DATA(gelf_url) = customizing->get_connector_url( ).
 
     LOOP AT converted_logs ASSIGNING FIELD-SYMBOL(<converted_log>).
 
