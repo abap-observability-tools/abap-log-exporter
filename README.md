@@ -8,6 +8,19 @@
 
 ![architecture](./out/architecture/architecture/architecture.png)
 
+# customizing
+
+Different scenarios can be customized in the table ZALE_CONFIG. This are the fields for each sceanrio
+
+| Field           | Description                         |
+| ----------------|-------------------------------------|
+| READER_CLASS    | class for the reader component      |
+| CONVERTER_CLASS | class for the converter component   |
+| CONNECTOR_URL   | URL to the log tool e.g. GrayLog    |
+| CONNECTOR_CLASS | class fot the connector component   |
+
+
+
 # local tests
 
 https://github.com/JohannesKonings/docker-abap-log-exporter-tester
