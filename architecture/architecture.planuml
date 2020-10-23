@@ -24,6 +24,7 @@ node "program" {
 [log connector] --> [GELF]
 [log connector] --> [Loki]
 [log connector] --> [Fluentd]
+[log connector] ..> [Additional log systems]
 
 
 @enduml
