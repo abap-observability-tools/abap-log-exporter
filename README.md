@@ -21,6 +21,6 @@ Different scenarios can be customized in the table ZALE_CONFIG. This are the fie
 
 # local tests
 
-https://github.com/JohannesKonings/docker-abap-log-exporter-tester
+[local test folder](local-tests/)
 
 :warning: instead of localhost the URLs have to be customized with the IP of the Ethernet Adapter

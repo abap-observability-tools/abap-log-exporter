@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  fluentd:
+    image: fluent/fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+    ports:
+      - "9880:9880"
