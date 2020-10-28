@@ -1,0 +1,34 @@
+version: "3"
+
+networks:
+  tempo:
+
+services:
+  tempo:
+    image: grafana/tempo:latest
+    volumes:
+      - ./grafana/tempo/tempo-local.yaml:/etc/tempo-local.yaml
+    ports:
+      - "6831:6831/udp"
+    command: -config.file=/etc/tempo-local.yaml
+    networks:
+      - tempo
+
+  tempo-query:
+    image: grafana/tempo-query:latest
+    command: ["--grpc-storage-plugin.configuration-file=/etc/tempo-query.yaml"]
+    volumes:
+      - ./grafana/tempo/tempo-query.yaml:/etc/tempo-query.yaml
+    ports:
+      - "16686:16686"  # jaeger-ui
+    networks:
+      - tempo
+
+  grafana:
+    image: grafana/grafana:master
+    volumes:
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+    ports:
+      - "3000:3000"
+    networks:
+      - tempo

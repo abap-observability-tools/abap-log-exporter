@@ -4,6 +4,7 @@
 ```
 docker-compose -f docker-compose-graylog.yml up
 docker-compose -f docker-compose-grafana-loki.yml up
+docker-compose -f docker-compose-grafana-tempo.yml up
 docker-compose -f docker-compose-fluentd.yml up
 ```
 
