@@ -1,3 +1,5 @@
+![abap-log-exporter](docs/logo-abap-log-exporter-horizontal.png)
+
 # abap-log-exporter :construction: WIP
 
 [![Known Vulnerabilities](https://snyk.io/test/github/Goala/abap-log-exporter/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Goala/abap-log-exporter?targetFile=package.json)
