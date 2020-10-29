@@ -10,7 +10,24 @@
 
 ![architecture](./out/architecture/architecture/architecture.png)
 
-# customizing
+# documentation
+
+## components
+
+| component       | variant        | status  |
+| ----------------|----------------|---------|
+| reader          | BAL            | WIP     |
+|                 | SMICM          | open    |
+|                 | SM21           | open    |
+| converter       | GELF           | WIP     |
+|                 | Loki           | open    |
+|                 | Tempo          | open    |
+| connector       | GELF           | WIP     |
+|                 | Loki           | open    |
+|                 | Tempo          | open    |
+
+
+## customizing
 
 Different scenarios can be customized in the table ZALE_CONFIG. This are the fields for each sceanrio
 
