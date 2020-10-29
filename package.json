@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/Goala/abap-log-exporter#readme",
   "devDependencies": {
-    "@abaplint/cli": "^2.57.7"
+    "@abaplint/cli": "^2.58.26"
   }
 }
