@@ -9,7 +9,7 @@ INTERFACE zif_ale_log_converter
 
   METHODS convert
     IMPORTING logs                  TYPE zif_ale_log_reader=>ty_logs
-              customizing           TYPE REF TO zif_ale_customizing
+              customizing           TYPE REF TO zcl_ale_customizing
     RETURNING VALUE(converted_logs) TYPE ty_converted_logs.
 
 ENDINTERFACE.

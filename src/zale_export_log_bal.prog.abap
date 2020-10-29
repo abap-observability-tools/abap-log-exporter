@@ -18,23 +18,23 @@ START-OF-SELECTION.
                            ( key = 'SUBOBJECT' value = suobject ) ).
 
   "set customzing
-  DATA(customizing) = NEW zcl_ale_customizing( ).
-  customizing->zif_ale_customizing~set_scenario( scenario ).
+  DATA(customizing) = NEW zcl_ale_customizing_base( ).
+  customizing->set_scenario( scenario ).
 
   "read
-  DATA(logs) = customizing->zif_ale_customizing~get_reader_class( )->read( filter_values = filter_values
-                                                                           customizing = customizing ).
+  DATA(logs) = customizing->get_reader_class( )->read( filter_values = filter_values
+                                                       customizing   = customizing ).
 
   "convert
-  DATA(converted_logs) = customizing->zif_ale_customizing~get_converter_class( )->convert( logs = logs
-                                                                                           customizing = customizing ).
+  DATA(converted_logs) = customizing->get_converter_class( )->convert( logs        = logs
+                                                                       customizing = customizing ).
 
   "connect
   IF test = abap_true.
     cl_demo_output=>display( converted_logs ).
   ELSE.
-    customizing->zif_ale_customizing~get_connector_class( )->connect( converted_logs = converted_logs
-                                                                      customizing = customizing ).
+    customizing->get_connector_class( )->connect( converted_logs = converted_logs
+                                                  customizing    = customizing ).
     DATA(log_lines) = lines( converted_logs ).
     WRITE |Number of logs sent: { log_lines }|.
   ENDIF.
