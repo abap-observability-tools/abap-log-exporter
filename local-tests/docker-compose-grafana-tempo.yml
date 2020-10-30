@@ -8,6 +8,7 @@ services:
     image: grafana/tempo:latest
     volumes:
       - ./grafana/tempo/tempo-local.yaml:/etc/tempo-local.yaml
+      - ./grafana/tempo/data:/tmp/tempo
     ports:
       - "6831:6831/udp"
     command: -config.file=/etc/tempo-local.yaml
