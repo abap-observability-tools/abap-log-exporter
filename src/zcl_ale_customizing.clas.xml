@@ -5,7 +5,7 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_ALE_CUSTOMIZING</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>ale customizing</DESCRIPT>
+    <DESCRIPT>Abstract class for ale customizing</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
