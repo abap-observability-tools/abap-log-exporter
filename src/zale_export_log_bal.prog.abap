@@ -18,8 +18,7 @@ START-OF-SELECTION.
                            ( key = 'SUBOBJECT' value = suobject ) ).
 
   "set customzing
-  DATA(customizing) = NEW zcl_ale_customizing_base( ).
-  customizing->set_scenario( scenario ).
+  DATA(customizing) = NEW zcl_ale_customizing_base( scenario ).
 
   "read
   DATA(logs) = customizing->get_reader_class( )->read( filter_values = filter_values

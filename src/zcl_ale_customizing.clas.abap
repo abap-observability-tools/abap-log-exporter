@@ -1,7 +1,7 @@
 CLASS zcl_ale_customizing DEFINITION PUBLIC ABSTRACT.
   PUBLIC SECTION.
 
-    METHODS set_scenario ABSTRACT
+    METHODS constructor
       IMPORTING scenario TYPE zale_config-ale_scenario.
 
     METHODS get_reader_class ABSTRACT
@@ -22,7 +22,28 @@ CLASS zcl_ale_customizing DEFINITION PUBLIC ABSTRACT.
     DATA configurations TYPE STANDARD TABLE OF zale_config.
 
   PRIVATE SECTION.
+
+    METHODS set_scenario
+      IMPORTING scenario TYPE zale_config-ale_scenario.
+
 ENDCLASS.
 
 CLASS zcl_ale_customizing IMPLEMENTATION.
+  METHOD constructor.
+
+    me->set_scenario( scenario ).
+
+  ENDMETHOD.
+
+  METHOD set_scenario.
+
+    me->scenario = scenario.
+
+    SELECT *
+    FROM zale_config
+    INTO TABLE @configurations
+    WHERE ale_scenario = @scenario.
+
+  ENDMETHOD.
+
 ENDCLASS.

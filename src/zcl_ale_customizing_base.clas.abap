@@ -12,7 +12,6 @@ CLASS zcl_ale_customizing_base DEFINITION INHERITING FROM zcl_ale_customizing
                  connector_class TYPE zale_config-ale_key VALUE 'CNCTR_CLAS',
                END OF customzing_fields.
 
-    METHODS set_scenario REDEFINITION.
     METHODS get_reader_class REDEFINITION.
     METHODS get_converter_class REDEFINITION.
     METHODS get_connector_class REDEFINITION.
@@ -24,21 +23,7 @@ CLASS zcl_ale_customizing_base DEFINITION INHERITING FROM zcl_ale_customizing
 
 ENDCLASS.
 
-
-
 CLASS zcl_ale_customizing_base IMPLEMENTATION.
-
-  METHOD set_scenario.
-
-    me->scenario = scenario.
-
-    SELECT *
-    FROM zale_config
-    INTO TABLE @configurations
-    WHERE ale_scenario = @scenario.
-
-  ENDMETHOD.
-
   METHOD get_connector_class.
     DATA(connector_class_name) = configurations[ ale_key = customzing_fields-connector_class ]-ale_value.
     TRANSLATE connector_class_name TO UPPER CASE.
