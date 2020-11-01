@@ -18,7 +18,7 @@
 | ----------------|----------------|---------|
 | reader          | BAL            | WIP     |
 |                 | SMICM          | open    |
-|                 | SM21           | open    |
+|                 | SM21           | #41     |
 | converter       | GELF           | WIP     |
 |                 | Loki           | open    |
 |                 | Tempo          | open    |
