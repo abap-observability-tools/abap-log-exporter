@@ -14,10 +14,18 @@ INTERFACE zif_ale_log_reader
 
   TYPES ty_filter_values TYPE STANDARD TABLE OF ty_filter_value.
 
+  TYPES: BEGIN OF ty_additional_field,
+           field TYPE string,
+           value TYPE string,
+         END OF ty_additional_field.
+
+  TYPES ty_additional_fields TYPE STANDARD TABLE OF ty_additional_field WITH KEY field.
+
   TYPES: BEGIN OF ty_log,
-           level       TYPE c LENGTH 1,
-           header_text TYPE string,
-           item_text   TYPE string,
+           level             TYPE c LENGTH 1,
+           header_text       TYPE string,
+           item_text         TYPE string,
+           additional_fields TYPE ty_additional_fields,
          END OF ty_log.
 
   TYPES ty_logs TYPE STANDARD TABLE OF ty_log WITH DEFAULT KEY.

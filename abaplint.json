@@ -58,10 +58,6 @@
       "exclude": [],
       "reason": ""
     },
-    "chain_mainly_declarations": {
-      "exclude": [],
-      "reason": ""
-    },
     "check_abstract": {
       "exclude": [],
       "reason": ""
@@ -241,11 +237,6 @@
       "ignoreGlobalClassDefinition": false,
       "ignoreGlobalInterface": false,
       "ignoreFunctionModuleName": false
-    },
-    "line_length": {
-      "exclude": [],
-      "reason": "",
-      "length": 120
     },
     "line_only_punc": {
       "exclude": [],
