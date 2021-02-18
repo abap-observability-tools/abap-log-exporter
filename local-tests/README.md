@@ -4,7 +4,6 @@
 ```
 docker-compose -f docker-compose-graylog.yml up
 docker-compose -f docker-compose-grafana-loki.yml up
-docker-compose -f docker-compose-grafana-tempo.yml up
 docker-compose -f docker-compose-fluentd.yml up
 ```
 
@@ -22,7 +21,7 @@ plugins: https://docs.graylog.org/en/3.3/pages/integrations/setup.html
 curl -v -H "Content-Type: application/json" -XPOST -s "http://localhost:3100/api/prom/push" --data-raw '{"streams": [{ "labels": "{foo=\"bar\"}", "entries": [{ "ts": "2020-04-11T14:01:06.801064-04:00", "line": "fizzbuzz" }] }]}'
 ```
 
-### graylog 
+### graylog
 
 ```
 curl -v -X POST -H 'Content-Type: application/json' -d '{ "version": "1.1", "host": "example.org", "short_message": "A short message", "level": 5, "_some_info": "foo" }' 'http://graylog:12201/gelf'
