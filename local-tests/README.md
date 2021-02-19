@@ -3,6 +3,7 @@
 
 ```
 docker-compose -f docker-compose-graylog.yml up
+docker-compose -f docker-compose-graylog4.yml up
 docker-compose -f docker-compose-grafana-loki.yml up
 docker-compose -f docker-compose-grafana-tempo.yml up
 docker-compose -f docker-compose-fluentd.yml up
@@ -22,7 +23,7 @@ plugins: https://docs.graylog.org/en/3.3/pages/integrations/setup.html
 curl -v -H "Content-Type: application/json" -XPOST -s "http://localhost:3100/api/prom/push" --data-raw '{"streams": [{ "labels": "{foo=\"bar\"}", "entries": [{ "ts": "2020-04-11T14:01:06.801064-04:00", "line": "fizzbuzz" }] }]}'
 ```
 
-### graylog 
+### graylog
 
 ```
 curl -v -X POST -H 'Content-Type: application/json' -d '{ "version": "1.1", "host": "example.org", "short_message": "A short message", "level": 5, "_some_info": "foo" }' 'http://graylog:12201/gelf'
@@ -46,6 +47,10 @@ https://hometechhacker.com/how-to-create-a-graylog-container-in-docker/
 https://mfyz.com/quick-and-dirty-set-up-graylog-in-5-minutes-with-docker/
 
 https://github.com/pecigonzalo/graylog-compose/blob/master/docker-compose.yml
+
+https://gist.github.com/Ghostbird/2365c64c6cb125566e1ee55737bedd5a
+
+https://docs.graylog.org/en/4.0/pages/installation/docker.html
 
 ### fluentd
 
