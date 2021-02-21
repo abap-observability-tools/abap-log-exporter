@@ -17,6 +17,18 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>FROMDAT</KEY>
+     <ENTRY>from date</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>FROMTIM</KEY>
+     <ENTRY>from time</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>OBJECT</KEY>
      <ENTRY>.</ENTRY>
      <LENGTH>9</LENGTH>
@@ -41,6 +53,18 @@
      <KEY>TEST</KEY>
      <ENTRY>Test</ENTRY>
      <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>TODAT</KEY>
+     <ENTRY>to date</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>TOTIM</KEY>
+     <ENTRY>to time</ENTRY>
+     <LENGTH>15</LENGTH>
     </item>
    </TPOOL>
   </asx:values>
