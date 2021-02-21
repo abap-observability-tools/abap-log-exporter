@@ -24,6 +24,10 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
 
     DATA(object) = VALUE balobj_d( filter_values[ key = 'OBJECT' ]-value ).
     DATA(subobject) = VALUE balsubobj( filter_values[ key = 'SUBOBJECT' ]-value ).
+    DATA(date_from) = VALUE baldate( filter_values[ key = 'DATE_FROM' ]-value ).
+    DATA(time_from) = VALUE baltime( filter_values[ key = 'TIME_FROM' ]-value ).
+    DATA(date_to) = VALUE baldate( filter_values[ key = 'DATE_TO' ]-value ).
+    DATA(time_to) = VALUE baltime( filter_values[ key = 'TIME_TO' ]-value ).
 
 
     CALL FUNCTION 'APPL_LOG_READ_DB'
@@ -31,10 +35,10 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
         object             = object
         subobject          = subobject
 *       external_number    = space            " external number
-*       date_from          = '00000000'       " Read-from date
-*       date_to            = SY-DATUM         " Read-by date
-*       time_from          = '000000'         " Read-from time
-*       time_to            = SY-UZEIT         " Read-by time
+        date_from          = date_from
+        date_to            = date_to
+        time_from          = time_from
+        time_to            = time_to
 *       log_class          = '4'              " Problem class
 *       program_name       = '*'              " Program name
 *       transaction_code   = '*'              " Transaction name

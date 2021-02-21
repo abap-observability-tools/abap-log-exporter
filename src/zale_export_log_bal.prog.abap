@@ -8,14 +8,29 @@ REPORT zale_export_log_bal.
 PARAMETERS scenario TYPE zale_config-ale_scenario OBLIGATORY.
 PARAMETERS object   TYPE balhdr-object OBLIGATORY.
 PARAMETERS suobject TYPE balhdr-subobject OBLIGATORY.
+PARAMETERS fromdat TYPE dats OBLIGATORY.
+PARAMETERS fromtim TYPE tims OBLIGATORY.
+PARAMETERS todat TYPE dats OBLIGATORY.
+PARAMETERS totim TYPE tims OBLIGATORY.
 PARAMETERS test TYPE flag DEFAULT 'X'.
+
+INITIALIZATION.
+
+  fromdat = sy-datum.
+  fromtim = sy-uzeit - 900. " 15 minutes
+  todat = sy-datum.
+  totim = sy-uzeit.
 
 START-OF-SELECTION.
 
   DATA filter_values TYPE zif_ale_log_reader=>ty_filter_values.
 
   filter_values = VALUE #( ( key = 'OBJECT' value = object )
-                           ( key = 'SUBOBJECT' value = suobject ) ).
+                           ( key = 'SUBOBJECT' value = suobject )
+                           ( key = 'DATE_FROM' value = fromdat )
+                           ( key = 'TIME_FROM' value = fromtim )
+                           ( key = 'DATE_TO' value = todat )
+                           ( key = 'TIME_TO' value = totim ) ).
 
   "set customzing
   DATA(customizing) = NEW zcl_ale_customizing_base( scenario ).

@@ -62,11 +62,6 @@
       "exclude": [],
       "reason": ""
     },
-    "check_comments": {
-      "exclude": [],
-      "reason": "",
-      "allowEndOfLine": false
-    },
     "check_ddic": {
       "exclude": [],
       "reason": ""
@@ -256,16 +251,6 @@
     "local_testclass_location": {
       "exclude": [],
       "reason": ""
-    },
-    "local_variable_names": {
-      "exclude": [],
-      "reason": "",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "expectedData": "\\w",
-      "expectedConstant": "^LC_.+$",
-      "expectedFS": "^<L._.+>$"
     },
     "main_file_contents": {
       "exclude": [],
