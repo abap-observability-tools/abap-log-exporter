@@ -5,13 +5,16 @@
 *&---------------------------------------------------------------------*
 REPORT zale_export_log_bal.
 
+TABLES balhdr.
+
 PARAMETERS scenario TYPE zale_config-ale_scenario OBLIGATORY.
-PARAMETERS object   TYPE balhdr-object OBLIGATORY.
-PARAMETERS suobject TYPE balhdr-subobject OBLIGATORY.
-PARAMETERS fromdat TYPE dats OBLIGATORY.
-PARAMETERS fromtim TYPE tims OBLIGATORY.
-PARAMETERS todat TYPE dats OBLIGATORY.
-PARAMETERS totim TYPE tims OBLIGATORY.
+SELECT-OPTIONS object FOR balhdr-object.
+SELECT-OPTIONS suobject FOR balhdr-subobject.
+PARAMETERS lastsec TYPE i.
+PARAMETERS fromdat TYPE dats.
+PARAMETERS fromtim TYPE tims.
+PARAMETERS todat TYPE dats.
+PARAMETERS totim TYPE tims.
 PARAMETERS test TYPE flag DEFAULT 'X'.
 
 INITIALIZATION.
@@ -25,12 +28,22 @@ START-OF-SELECTION.
 
   DATA filter_values TYPE zif_ale_log_reader=>ty_filter_values.
 
-  filter_values = VALUE #( ( key = 'OBJECT' value = object )
-                           ( key = 'SUBOBJECT' value = suobject )
-                           ( key = 'DATE_FROM' value = fromdat )
-                           ( key = 'TIME_FROM' value = fromtim )
-                           ( key = 'DATE_TO' value = todat )
-                           ( key = 'TIME_TO' value = totim ) ).
+
+  IF lastsec IS NOT INITIAL.
+    fromdat = sy-datum.
+    fromtim = sy-uzeit - lastsec.
+    todat = sy-datum.
+    totim = sy-uzeit.
+  ENDIF.
+
+
+  filter_values = VALUE #( ( key = 'OBJECT' value = REF #( object[] ) )
+                           ( key = 'SUBOBJECT' value = REF #( suobject[] ) )
+                           ( key = 'LAST_SECONDS' value = REF #( lastsec ) )
+                           ( key = 'DATE_FROM' value = REF #( fromdat ) )
+                           ( key = 'TIME_FROM' value = REF #( fromtim ) )
+                           ( key = 'DATE_TO' value = REF #( todat ) )
+                           ( key = 'TIME_TO' value = REF #( totim ) ) ).
 
   "set customzing
   DATA(customizing) = NEW zcl_ale_customizing_base( scenario ).
