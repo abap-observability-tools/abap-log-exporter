@@ -15,7 +15,7 @@ ENDCLASS.
 
 CLASS zcl_ale_log_converter_loki IMPLEMENTATION.
   METHOD zif_ale_log_converter~convert.
-
+    sy-subrc = sy-subrc. "placeholder
   ENDMETHOD.
 
 ENDCLASS.
