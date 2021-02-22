@@ -20,6 +20,7 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
     DATA message_parameters   TYPE STANDARD TABLE OF balmp.
     DATA contexts             TYPE STANDARD TABLE OF balc.
     DATA exceptions           TYPE STANDARD TABLE OF bal_s_exception.
+    DATA log_entry            TYPE string.
 
     FIELD-SYMBOLS <object_range> TYPE STANDARD TABLE.
     FIELD-SYMBOLS <subobject_range> TYPE STANDARD TABLE.
@@ -31,12 +32,12 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
     ASSIGN subobject_ref->* TO <subobject_range>.
 
     SELECT
-    object,
-    subobject
-    FROM balsub
-    INTO TABLE @DATA(objects)
-    WHERE object IN @<object_range>
-    AND subobject IN @<subobject_range>.
+      object,
+      subobject
+      FROM balsub
+      INTO TABLE @DATA(objects)
+      WHERE object IN @<object_range>
+      AND subobject IN @<subobject_range>.
 
 
     DATA(date_from_ref) = filter_values[ key = 'DATE_FROM' ]-value.
@@ -79,7 +80,6 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
           contexts           = contexts
           t_exceptions       = exceptions.
 
-      DATA log_entry TYPE string.
       LOOP AT header_data ASSIGNING FIELD-SYMBOL(<header_data>).
         LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>) WHERE lognumber = <header_data>-lognumber.
 

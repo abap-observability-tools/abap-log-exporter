@@ -23,11 +23,6 @@
       "exclude": [],
       "reason": ""
     },
-    "abapdoc": {
-      "exclude": [],
-      "reason": "",
-      "checkLocal": false
-    },
     "allowed_object_naming": {
       "exclude": [],
       "reason": ""
@@ -85,16 +80,6 @@
     "check_transformation_exists": {
       "exclude": [],
       "reason": ""
-    },
-    "class_attribute_names": {
-      "exclude": [],
-      "reason": "",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "ignoreExceptions": true,
-      "statics": "^G._.+$",
-      "instance": "^M._.+$"
     },
     "cloud_types": {
       "exclude": [],
@@ -369,7 +354,7 @@
     "prefix_is_current_class": {
       "exclude": [],
       "reason": "",
-      "omitMeInstanceCalls": true
+      "omitMeInstanceCalls": false
     },
     "release_idoc": {
       "exclude": [],
@@ -456,10 +441,6 @@
       "reason": ""
     },
     "unreachable_code": {
-      "exclude": [],
-      "reason": ""
-    },
-    "unused_variables": {
       "exclude": [],
       "reason": ""
     },

@@ -15,7 +15,7 @@ ENDCLASS.
 
 CLASS zcl_ale_log_connector_loki IMPLEMENTATION.
   METHOD zif_ale_log_connector~connect.
-
+    sy-subrc = sy-subrc. "placeholder
   ENDMETHOD.
 
 ENDCLASS.
