@@ -46,7 +46,7 @@
       "communication": true,
       "statics": true,
       "systemCall": true,
-      "defaultKey": true,
+      "defaultKey": false,
       "break": true
     },
     "begin_end_names": {
@@ -178,10 +178,6 @@
       "reason": ""
     },
     "if_in_if": {
-      "exclude": [],
-      "reason": ""
-    },
-    "implement_methods": {
       "exclude": [],
       "reason": ""
     },
