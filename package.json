@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "abap-log-exporter",
   "scripts": {
-    "lint": "abaplint"
+    "lint": "abaplint",
+    "overrideChangelog": "gren changelog --override"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/Goala/abap-log-exporter#readme",
   "devDependencies": {
-    "@abaplint/cli": "^2.58.26"
+    "@abaplint/cli": "^2.58.26",
+    "github-release-notes": "^0.17.3"
   }
 }
