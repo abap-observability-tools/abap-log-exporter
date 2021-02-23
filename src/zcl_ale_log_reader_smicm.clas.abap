@@ -15,7 +15,7 @@ ENDCLASS.
 
 CLASS zcl_ale_log_reader_smicm IMPLEMENTATION.
   METHOD zif_ale_log_reader~read.
-
+    sy-subrc = sy-subrc. "placeholder
   ENDMETHOD.
 
 ENDCLASS.

@@ -26,11 +26,8 @@ CLASS zcl_ale_log_reader_sm21 IMPLEMENTATION.
 
     syslog_filter = NEW #( ).
 
-    syslog_filter->set_filter_datetime(
-       EXPORTING
-         im_datetime_from = datetime_from                  " UTC Time Stamp in Short Form (YYYYMMDDhhmmss)
-         im_datetime_to   = datetime_to                 " UTC Time Stamp in Short Form (YYYYMMDDhhmmss)
-     ).
+    syslog_filter->set_filter_datetime( im_datetime_from = datetime_from
+                                        im_datetime_to   = datetime_to ).
 
     DATA(syslog_client) = NEW cl_syslog_sapcontrol_client( ).
 
@@ -49,7 +46,6 @@ CLASS zcl_ale_log_reader_sm21 IMPLEMENTATION.
       ENDTRY.
     ENDLOOP.
 
-
     LOOP AT syslogs_total ASSIGNING FIELD-SYMBOL(<syslog>).
 
       logs = VALUE #( BASE logs ( level = '1'
@@ -57,9 +53,6 @@ CLASS zcl_ale_log_reader_sm21 IMPLEMENTATION.
                                   item_text = <syslog>-slgdata ) ).
 
     ENDLOOP.
-
-
-
 
   ENDMETHOD.
 

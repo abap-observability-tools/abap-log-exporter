@@ -16,6 +16,9 @@ ENDCLASS.
 CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
   METHOD zif_ale_log_connector~connect.
 
+    DATA xjson TYPE xstring.
+    DATA text TYPE string.
+
     DATA(gelf_url) = customizing->get_connector_url( ).
 
     LOOP AT converted_logs ASSIGNING FIELD-SYMBOL(<converted_log>).
@@ -36,9 +39,6 @@ CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
 
       client->request->set_method( 'POST' ).
       client->request->set_content_type( 'application/json' ).
-
-      DATA xjson TYPE xstring.
-      DATA text TYPE string.
 
       text = <converted_log>-json.
 

@@ -40,9 +40,9 @@ CLASS zcl_ale_customizing IMPLEMENTATION.
     me->scenario = scenario.
 
     SELECT *
-    FROM zale_config
-    INTO TABLE @configurations
-    WHERE ale_scenario = @scenario.
+      FROM zale_config
+      INTO TABLE @configurations
+      WHERE ale_scenario = @scenario.
 
   ENDMETHOD.
 

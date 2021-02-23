@@ -20,57 +20,82 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
     DATA message_parameters   TYPE STANDARD TABLE OF balmp.
     DATA contexts             TYPE STANDARD TABLE OF balc.
     DATA exceptions           TYPE STANDARD TABLE OF bal_s_exception.
+    DATA log_entry            TYPE string.
+
+    FIELD-SYMBOLS <object_range> TYPE STANDARD TABLE.
+    FIELD-SYMBOLS <subobject_range> TYPE STANDARD TABLE.
+
+    DATA(object_ref) = filter_values[ key = 'OBJECT' ]-value.
+    ASSIGN object_ref->* TO <object_range>.
+
+    DATA(subobject_ref) = filter_values[ key = 'SUBOBJECT' ]-value.
+    ASSIGN subobject_ref->* TO <subobject_range>.
+
+    SELECT
+      object,
+      subobject
+      FROM balsub
+      INTO TABLE @DATA(objects)
+      WHERE object IN @<object_range>
+      AND subobject IN @<subobject_range>.
 
 
-    DATA(object) = VALUE balobj_d( filter_values[ key = 'OBJECT' ]-value ).
-    DATA(subobject) = VALUE balsubobj( filter_values[ key = 'SUBOBJECT' ]-value ).
-    DATA(date_from) = VALUE baldate( filter_values[ key = 'DATE_FROM' ]-value ).
-    DATA(time_from) = VALUE baltime( filter_values[ key = 'TIME_FROM' ]-value ).
-    DATA(date_to) = VALUE baldate( filter_values[ key = 'DATE_TO' ]-value ).
-    DATA(time_to) = VALUE baltime( filter_values[ key = 'TIME_TO' ]-value ).
+    DATA(date_from_ref) = filter_values[ key = 'DATE_FROM' ]-value.
+    ASSIGN date_from_ref->* TO FIELD-SYMBOL(<date_from>).
+
+    DATA(time_from_ref) = filter_values[ key = 'TIME_FROM' ]-value.
+    ASSIGN time_from_ref->* TO FIELD-SYMBOL(<time_from>).
+
+    DATA(date_to_ref) = filter_values[ key = 'DATE_TO' ]-value.
+    ASSIGN date_to_ref->* TO FIELD-SYMBOL(<date_to>).
+
+    DATA(time_to_ref) = filter_values[ key = 'TIME_TO' ]-value.
+    ASSIGN time_to_ref->* TO FIELD-SYMBOL(<time_to>).
 
 
-    CALL FUNCTION 'APPL_LOG_READ_DB'
-      EXPORTING
-        object             = object
-        subobject          = subobject
-*       external_number    = space            " external number
-        date_from          = date_from
-        date_to            = date_to
-        time_from          = time_from
-        time_to            = time_to
-*       log_class          = '4'              " Problem class
-*       program_name       = '*'              " Program name
-*       transaction_code   = '*'              " Transaction name
-*       user_id            = space            " User name
-*       mode               = '+'              " Operating mode
-*       put_into_memory    = space
+    LOOP AT objects ASSIGNING FIELD-SYMBOL(<object>).
+
+      CALL FUNCTION 'APPL_LOG_READ_DB'
+        EXPORTING
+          object             = <object>-object
+          subobject          = <object>-subobject
+*         external_number    = space            " external number
+          date_from          = CONV baldate( <date_from> )
+          date_to            = CONV baldate( <date_to> )
+          time_from          = CONV baltime( <time_from> )
+          time_to            = CONV baltime( <time_to> )
+*         log_class          = '4'              " Problem class
+*         program_name       = '*'              " Program name
+*         transaction_code   = '*'              " Transaction name
+*         user_id            = space            " User name
+*         mode               = '+'              " Operating mode
+*         put_into_memory    = space
 *  IMPORTING
-*       number_of_logs     =                  " Number of logs read
-      TABLES
-        header_data        = header_data
-        header_parameters  = header_parameters
-        messages           = messages
-        message_parameters = message_parameters
-        contexts           = contexts
-        t_exceptions       = exceptions.
+*         number_of_logs     =                  " Number of logs read
+        TABLES
+          header_data        = header_data
+          header_parameters  = header_parameters
+          messages           = messages
+          message_parameters = message_parameters
+          contexts           = contexts
+          t_exceptions       = exceptions.
 
-    DATA log_entry TYPE string.
-    LOOP AT header_data ASSIGNING FIELD-SYMBOL(<header_data>).
-      LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>) WHERE lognumber = <header_data>-lognumber.
+      LOOP AT header_data ASSIGNING FIELD-SYMBOL(<header_data>).
+        LOOP AT messages ASSIGNING FIELD-SYMBOL(<message>) WHERE lognumber = <header_data>-lognumber.
 
-        MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
-          WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
-          INTO log_entry.
+          MESSAGE ID <message>-msgid TYPE <message>-msgty NUMBER <message>-msgno
+            WITH <message>-msgv1 <message>-msgv2 <message>-msgv3 <message>-msgv4
+            INTO log_entry.
 
-        DATA(additional_fields) = VALUE zif_ale_log_reader=>ty_additional_fields( ( field = 'object' value = <header_data>-object )
-                                                                                  ( field = 'subobject' value = <header_data>-subobject ) ).
+          DATA(additional_fields) = VALUE zif_ale_log_reader=>ty_additional_fields( ( field = 'object' value = <header_data>-object )
+                                                                                    ( field = 'subobject' value = <header_data>-subobject ) ).
 
-        logs = VALUE #( BASE logs ( level = <message>-msgty
-                                    header_text = |{ <header_data>-extnumber } / { <header_data>-object } / { <header_data>-subobject }|
-                                    item_text = log_entry
-                                    additional_fields = additional_fields ) ).
+          logs = VALUE #( BASE logs ( level = <message>-msgty
+                                      header_text = |{ <header_data>-extnumber } / { <header_data>-object } / { <header_data>-subobject }|
+                                      item_text = log_entry
+                                      additional_fields = additional_fields ) ).
 
+        ENDLOOP.
       ENDLOOP.
     ENDLOOP.
 

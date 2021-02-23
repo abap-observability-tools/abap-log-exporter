@@ -29,6 +29,12 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>LASTSEC</KEY>
+     <ENTRY>search last in seconds</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>OBJECT</KEY>
      <ENTRY>.</ENTRY>
      <LENGTH>9</LENGTH>

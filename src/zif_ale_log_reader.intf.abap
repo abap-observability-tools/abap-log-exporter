@@ -9,7 +9,7 @@ INTERFACE zif_ale_log_reader
 
   TYPES: BEGIN OF ty_filter_value,
            key   TYPE string,
-           value TYPE string,
+           value TYPE REF TO data,
          END OF ty_filter_value.
 
   TYPES ty_filter_values TYPE STANDARD TABLE OF ty_filter_value.
