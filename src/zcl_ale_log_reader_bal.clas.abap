@@ -55,6 +55,13 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
 
     LOOP AT objects ASSIGNING FIELD-SYMBOL(<object>).
 
+      CLEAR header_data.
+      CLEAR header_parameters.
+      CLEAR messages.
+      CLEAR message_parameters.
+      CLEAR contexts.
+      CLEAR exceptions.
+
       CALL FUNCTION 'APPL_LOG_READ_DB'
         EXPORTING
           object             = <object>-object
