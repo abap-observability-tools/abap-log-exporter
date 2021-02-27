@@ -2,7 +2,7 @@ CLASS zcl_ale_customizing DEFINITION PUBLIC ABSTRACT.
   PUBLIC SECTION.
 
     METHODS constructor
-      IMPORTING scenario TYPE zale_config-ale_scenario.
+      IMPORTING scenario TYPE zale_config-log_scenario.
 
     METHODS get_reader_class ABSTRACT
       RETURNING VALUE(reader_class) TYPE REF TO zif_ale_log_reader.
@@ -14,17 +14,17 @@ CLASS zcl_ale_customizing DEFINITION PUBLIC ABSTRACT.
       RETURNING VALUE(connector_class) TYPE REF TO zif_ale_log_connector.
 
     METHODS get_connector_url ABSTRACT
-      RETURNING VALUE(connector_url) TYPE zale_config-ale_value.
+      RETURNING VALUE(connector_url) TYPE zale_config-connector_url.
 
   PROTECTED SECTION.
 
-    DATA scenario TYPE zale_config-ale_scenario.
-    DATA configurations TYPE STANDARD TABLE OF zale_config.
+    DATA scenario TYPE zale_config-log_scenario.
+    DATA configuration TYPE zale_config.
 
   PRIVATE SECTION.
 
     METHODS set_scenario
-      IMPORTING scenario TYPE zale_config-ale_scenario.
+      IMPORTING scenario TYPE zale_config-log_scenario.
 
 ENDCLASS.
 
@@ -39,10 +39,10 @@ CLASS zcl_ale_customizing IMPLEMENTATION.
 
     me->scenario = scenario.
 
-    SELECT *
+    SELECT SINGLE *
       FROM zale_config
-      INTO TABLE @configurations
-      WHERE ale_scenario = @scenario.
+      INTO @configuration
+      WHERE log_scenario = @scenario.
 
   ENDMETHOD.
 
