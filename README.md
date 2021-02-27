@@ -29,14 +29,14 @@
 
 ## customizing
 
-Different scenarios can be customized in the table ZALE_CONFIG. This are the fields for each sceanrio
+Different scenarios can be customized via transaction ZALE_CONFIG. This are the fields for each sceanrio
 
-| Field           | ABAP Field Key | Description                         |
-| ----------------|----------------|-------------------------------------|
-| READER_CLASS    | RDR_CLASS      | class for the reader component      |
-| CONVERTER_CLASS | CVTR_CLASS     | class for the converter component   |
-| CONNECTOR_URL   | CNCTR_URL      | URL to the log tool e.g. GrayLog    |
-| CONNECTOR_CLASS | CNCTR_CLAS     | class fot the connector component   |
+| Field           | Description                         |
+| ----------------|-------------------------------------|
+| reader class    | class for the reader component      |
+| converter class | class for the converter component   |
+| connector url   | URL to the log tool e.g. GrayLog    |
+| connector class | class for the connector component   |
 
 # local tests
 
