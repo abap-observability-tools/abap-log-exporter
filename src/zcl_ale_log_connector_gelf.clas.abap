@@ -25,7 +25,7 @@ CLASS zcl_ale_log_connector_gelf IMPLEMENTATION.
 
       cl_http_client=>create_by_url(
             EXPORTING
-              url                = conv #( gelf_url )
+              url                = CONV #( gelf_url )
             IMPORTING
               client             = DATA(client)
             EXCEPTIONS
