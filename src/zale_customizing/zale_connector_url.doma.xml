@@ -3,12 +3,14 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD01V>
-    <DOMNAME>ZALE_SCENARIO</DOMNAME>
+    <DOMNAME>ZALE_CONNECTOR_URL</DOMNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
-    <LENG>000020</LENG>
-    <OUTPUTLEN>000020</OUTPUTLEN>
-    <DDTEXT>ale scenario</DDTEXT>
+    <LENG>000255</LENG>
+    <OUTPUTLEN>000255</OUTPUTLEN>
+    <LOWERCASE>X</LOWERCASE>
+    <DDTEXT>connector url</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
    </DD01V>
   </asx:values>
  </asx:abap>
