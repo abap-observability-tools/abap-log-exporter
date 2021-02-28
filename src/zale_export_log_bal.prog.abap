@@ -7,7 +7,7 @@ REPORT zale_export_log_bal.
 
 TABLES balhdr.
 
-PARAMETERS scenario TYPE zale_config-ale_scenario OBLIGATORY.
+PARAMETERS scenario TYPE zale_config-log_scenario OBLIGATORY.
 SELECT-OPTIONS object FOR balhdr-object.
 SELECT-OPTIONS suobject FOR balhdr-subobject.
 PARAMETERS lastsec TYPE i.
