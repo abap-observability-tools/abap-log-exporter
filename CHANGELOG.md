@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.2.0 🌈 (01/03/2021)
+## Changes
+## 🐛 Bug Fixes
+
+- clear table added in bal reader @JohannesKonings (#76)
+
+## 🧰 Maintenance
+
+- maintenance view for ale config added @JohannesKonings (#75)
+- package for component customizing added @JohannesKonings (#72)
+
+## 🧺 Miscellaneous
+
+- Update LICENSE @JohannesKonings (#77)
+- Bump @abaplint/cli from 2.69.2 to 2.69.4 @dependabot (#74)
+- Bump @abaplint/cli from 2.69.1 to 2.69.2 @dependabot (#71)
+- Update Changelog @github-actions (#69)
+
+---
+
 ## v0.1.0 🌈 (23/02/2021)
 ## Changes
 ## 🚀 Features
