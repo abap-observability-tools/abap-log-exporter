@@ -16,15 +16,13 @@
 
 | component       | variant        | status  |
 | ----------------|----------------|---------|
-| reader          | BAL            | [WIP](https://github.com/abap-observability-tools/abap-log-exporter/issues?q=is%3Aopen+is%3Aissue+label%3ABAL)     |
+| reader          | BAL            | :heavy_check_mark:     |
 |                 | SMICM          | open    |
 |                 | SM21           | [#41](https://github.com/abap-observability-tools/abap-log-exporter/issues/41)     |
-| converter       | GELF           | WIP     |
-|                 | Loki           | open    |
-|                 | Tempo          | open    |
+| converter       | GELF           | :heavy_check_mark:     |
+|                 | Loki           | :heavy_check_mark:     |
 | connector       | GELF           | :heavy_check_mark:     |
-|                 | Loki           | open    |
-|                 | Tempo          | open    |
+|                 | Loki           | :heavy_check_mark:     |
 
 
 ## customizing
