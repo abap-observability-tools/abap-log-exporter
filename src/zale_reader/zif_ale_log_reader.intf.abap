@@ -25,6 +25,7 @@ INTERFACE zif_ale_log_reader
            level             TYPE c LENGTH 1,
            header_text       TYPE string,
            item_text         TYPE string,
+           timestamp         TYPE timestamp,
            additional_fields TYPE ty_additional_fields,
          END OF ty_log.
 

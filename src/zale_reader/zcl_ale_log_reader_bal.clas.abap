@@ -97,9 +97,11 @@ CLASS zcl_ale_log_reader_bal IMPLEMENTATION.
           DATA(additional_fields) = VALUE zif_ale_log_reader=>ty_additional_fields( ( field = 'object' value = <header_data>-object )
                                                                                     ( field = 'subobject' value = <header_data>-subobject ) ).
 
+
           logs = VALUE #( BASE logs ( level = <message>-msgty
                                       header_text = |{ <header_data>-extnumber } / { <header_data>-object } / { <header_data>-subobject }|
                                       item_text = log_entry
+                                      timestamp = <header_data>-tim_stmp
                                       additional_fields = additional_fields ) ).
 
         ENDLOOP.
