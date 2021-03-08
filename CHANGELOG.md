@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.3.0 🌈 (08/03/2021)
+## Changes
+## 🚀 Features
+
+- loki converter and connector added @JohannesKonings (#86)
+
+## 🧺 Miscellaneous
+
+- Bump @abaplint/cli from 2.69.8 to 2.69.10 @dependabot (#87)
+- local-test loki versions added and provisioning @JohannesKonings (#84)
+- Bump @abaplint/cli from 2.69.7 to 2.69.8 @dependabot (#82)
+- Bump @abaplint/cli from 2.69.4 to 2.69.7 @dependabot (#79)
+- Update Changelog @github-actions (#78)
+
+---
+
 ## v0.2.0 🌈 (01/03/2021)
 ## Changes
 ## 🐛 Bug Fixes
